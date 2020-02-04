@@ -1,0 +1,114 @@
+.gauge-container {
+    background-color: transparent;
+    margin: 0px auto;
+}
+
+$baseFontSize: 32;
+
+@function rem($val) {
+  @return #{$val / $baseFontSize}rem;
+}
+
+.body {
+  font-size: #{$baseFontSize};
+}
+
+.mask {
+  position: relative;
+  overflow: hidden;
+
+  display: block;
+  width: rem(200);
+  height: rem(100);
+  margin: rem(20);
+}
+  
+.semi-circle {
+  position: relative;
+
+  display: block;
+  width: rem(200);
+  height: rem(100);
+
+  background: linear-gradient(to right, red 0%, orange 50%, yellow 75%, green 100%);
+
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+
+    display: block;
+    width: rem(140);
+    height: rem(70);
+    margin-left: rem(-70);
+
+    background: #161719;
+
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+  }      
+}
+
+.semi-circle--mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: rem(200);
+  height: rem(200);
+
+  background: transparent;
+
+  transform: rotate(180deg) translate3d(0,0,0);
+  transform-origin: center center;
+  backface-visibility: hidden;
+  transition: all .3s ease-in-out;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: 2;
+
+    display: block;
+    width: rem(202);
+    height: rem(102);
+    margin: -1px 0 0 -1px;
+
+    background: #f2f2f2;
+
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+  }      
+}
+
+.gauge-value {
+  font-size: 23px;
+  color: whitesmoke;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  left: 14px;
+  bottom: 34px;
+  display: block;
+  text-align: center;
+  line-height: 33px;
+}
+
+.box {
+  margin-top: 10px;
+}
+
+.gauge-name {
+  width: 75px;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  bottom: -18px;
+  left: 14px;
+}

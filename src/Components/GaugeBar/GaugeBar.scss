@@ -1,0 +1,53 @@
+.gaugeBar-container {
+    background-color: transparent;
+    margin: 0px auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.gaugeBar-value {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.gaugeBar-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.gaugeBar-gauge {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.gaugeBar-bar {
+    margin: 0px;
+    width: 24%;
+    height: 10px;
+}
+
+.red {
+    background-color: rgb(255, 28, 28);
+}
+
+.orange {
+    background-color: rgb(255, 187, 60);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 85);
+}
+
+.green {
+    background-color: rgb(46, 131, 46);
+}
